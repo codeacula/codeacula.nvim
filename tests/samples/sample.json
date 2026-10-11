@@ -1,0 +1,48 @@
+{
+  "name": "codeacula-observatory",
+  "version": "1.4.0",
+  "private": true,
+  "description": "Star catalogue with \"escaped\" quotes and a tab\tcharacter",
+  "site": {
+    "latitude": 19.8207,
+    "longitude": -155.4681,
+    "elevation": 4205,
+    "timezone": "Pacific/Honolulu"
+  },
+  "telescopes": [
+    {
+      "id": 1,
+      "aperture": 0.203,
+      "mount": {
+        "type": "equatorial",
+        "tracking": true,
+        "limits": { "altitude": 15, "azimuth": null }
+      }
+    },
+    {
+      "id": 2,
+      "aperture": 0.102,
+      "mount": {
+        "type": "alt-az",
+        "tracking": false,
+        "limits": { "altitude": 10, "azimuth": [0, 360] }
+      }
+    }
+  ],
+  "catalogue": {
+    "stars": [
+      { "name": "Sirius", "magnitude": -1.46, "spectral": "A1V" },
+      { "name": "Vega", "magnitude": 0.03, "spectral": "A0V" },
+      { "name": "Antares", "magnitude": 1.06, "spectral": "M1.5Iab" }
+    ],
+    "orbs": {
+      "moon": { "radius_km": 1737.4, "tidally_locked": true },
+      "phobos": { "radius_km": 11.267, "tidally_locked": true }
+    }
+  },
+  "alerts": {
+    "email": "night-shift@example.com",
+    "threshold": 2.5e-3,
+    "enabled": false
+  }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Star chart</title>
+    <!-- TODO: move these styles into chart.css -->
+    <style>
+      body { background: #0c1220; color: #a2aabc; font-family: sans-serif; }
+      .star[data-bright="true"] { color: #ffd6a0; }
+    </style>
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <h1>Tonight's sky</h1>
+      <nav aria-label="Sections">
+        <a href="#stars">Stars</a> &middot; <a href="#orbs">Orbs</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="stars">
+        <h2>Brightest stars</h2>
+        <!-- NOTE: magnitudes are apparent, not absolute -->
+        <ul class="star-list">
+          <li class="star" data-bright="true" data-magnitude="-1.46">Sirius</li>
+          <li class="star" data-magnitude="0.03">Vega</li>
+          <li class="star" data-magnitude="1.06">Antares</li>
+        </ul>
+      </section>
+
+      <section id="orbs">
+        <h2>Orbs in view</h2>
+        <img src="moon.png" alt="The Moon at first quarter" width="320" height="320">
+        <form action="/log" method="post">
+          <label for="seeing">Seeing (1&ndash;5)</label>
+          <input type="number" id="seeing" name="seeing" min="1" max="5" required>
+          <button type="submit" disabled>Log it</button>
+        </form>
+      </section>
+    </main>
+
+    <!-- FIX: the footer overlaps the form on narrow screens -->
+    <footer>
+      <p>Data from the <em>night shift</em> catalogue. &copy; 2026</p>
+    </footer>
+
+    <script>
+      const stars = document.querySelectorAll(".star");
+      stars.forEach((el) => {
+        if (Number(el.dataset.magnitude) < 0) el.classList.add("bright");
+      });
+    </script>
+  </body>
+</html>
