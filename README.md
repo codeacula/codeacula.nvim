@@ -11,14 +11,25 @@ It is plain Lua with no dependencies and no build step, and it covers
 treesitter, LSP semantic tokens, the legacy syntax groups, and the plugins in a
 typical LazyVim setup.
 
-![TypeScript in codeacula](assets/screenshots/ts.png)
+![codeacula in Neovim with LazyVim](assets/screenshots/editor.png)
+
+| File picker | which-key | Completion |
+| --- | --- | --- |
+| ![File picker](assets/screenshots/picker.png) | ![which-key](assets/screenshots/which-key.png) | ![Completion with docs](assets/screenshots/completion.png) |
+
+<details>
+<summary>Demo</summary>
+
+![Demo: editor, picker, which-key and completion](assets/demo.gif)
+
+</details>
 
 <details>
 <summary>More languages</summary>
 
-| Lua | Rust | C# |
-| --- | --- | --- |
-| ![Lua](assets/screenshots/lua.png) | ![Rust](assets/screenshots/rs.png) | ![C#](assets/screenshots/cs.png) |
+| TypeScript | Lua | Rust | C# |
+| --- | --- | --- | --- |
+| ![TypeScript](assets/screenshots/ts.png) | ![Lua](assets/screenshots/lua.png) | ![Rust](assets/screenshots/rs.png) | ![C#](assets/screenshots/cs.png) |
 
 </details>
 
@@ -126,6 +137,15 @@ scripts/screenshots.sh sample.md    # or pick specific samples
 ```
 
 PNGs are written to `assets/screenshots/`.
+
+The editor, picker, which-key and completion shots, and `assets/demo.gif`, are
+recorded from a live Neovim session with [VHS](https://github.com/charmbracelet/vhs)
+(needs `vhs`, `ttyd` and `ffmpeg`). They use your own config, and the tape assumes
+LazyVim keymaps:
+
+```sh
+vhs scripts/demo.tape
+```
 
 ## License
 
