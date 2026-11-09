@@ -11,6 +11,17 @@ It is plain Lua with no dependencies and no build step, and it covers
 treesitter, LSP semantic tokens, the legacy syntax groups, and the plugins in a
 typical LazyVim setup.
 
+![TypeScript in codeacula](assets/screenshots/ts.png)
+
+<details>
+<summary>More languages</summary>
+
+| Lua | Rust | C# |
+| --- | --- | --- |
+| ![Lua](assets/screenshots/lua.png) | ![Rust](assets/screenshots/rs.png) | ![C#](assets/screenshots/cs.png) |
+
+</details>
+
 ## Installation
 
 With [lazy.nvim](https://github.com/folke/lazy.nvim):
@@ -105,6 +116,16 @@ tests/render.sh
 ```
 
 This writes one HTML file per sample to `build/review/`.
+
+The README screenshots come from the same samples. To regenerate them (needs
+`chromium` and ImageMagick's `magick`):
+
+```sh
+scripts/screenshots.sh              # lua, ts, rs, cs
+scripts/screenshots.sh sample.md    # or pick specific samples
+```
+
+PNGs are written to `assets/screenshots/`.
 
 ## License
 
